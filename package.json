@@ -1,0 +1,26 @@
+{
+  "name": "log4js",
+  "version": "1.0.0",
+  "description": "Logger for JavaScript",
+  "main": "ts-node index.ts",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "ts-node tests/test.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Tehcn/Log4JS.git"
+  },
+  "author": "Noah Perry",
+  "license": "WTFPL",
+  "bugs": {
+    "url": "https://github.com/Tehcn/Log4JS/issues"
+  },
+  "homepage": "https://github.com/Tehcn/Log4JS#readme",
+  "dependencies": {
+    "@types/node": "^17.0.5",
+    "typescript": "^4.5.4"
+  }
+}
