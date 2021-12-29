@@ -47,7 +47,7 @@ Output:
 
 ## Logging with multiple threads
 
-or something that  will use a logger with the same name (threads for example)
+or something that will use a logger with the same name (threads for example)
 
 ```js
 // import the Logger class from Log4JS
