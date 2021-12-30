@@ -20,7 +20,12 @@ def add_files():
 
     file_list = " ".join(files)
 
-    right = input(f"Does this look right: {file_list} (Y/n): ")
+    right = ""
+
+    if len(files) == 0:
+        right = input("Are you sure you don't want to add any files: (Y/n): ")
+    else:
+        right = input(f"Does this look right: {file_list} (Y/n): ")
 
     if right.lower() == "n":
         add_files()
@@ -33,7 +38,8 @@ def add_files():
             break
 
         print("Empty commit message")
-        input("Check that the package.json version number has been updated appropriately\nCheck that the CHANGELOG.md has been updated appropriately\nWhen done, press enter ")
+
+    input("Check that the package.json version number has been updated appropriately\nCheck that the CHANGELOG.md has been updated appropriately\nWhen done, press enter ")
 
     print("Running commands...")
 

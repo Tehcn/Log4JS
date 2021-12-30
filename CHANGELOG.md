@@ -3,6 +3,16 @@
 Most recent updates are at the top
 Note: Every update assumes updating of CHANGELOG.md and package.json
 
+## 1.0.4 - Dev Patch
+
+Added:
+
+- nfgit.py now accepts no files (useful for updating just CHANGELOG.md or package.json)
+
+Fixed:
+
+- nfgit.py now asks if the CHANGELOG.md and package.json files were properly updated
+
 ## 1.0.3 - Dev Update
 
 Added:
