@@ -3,6 +3,13 @@
 Most recent updates are at the top
 Note: Every update assumes updating of CHANGELOG.md and package.json
 
+## 1.0.5 - Bug Fix
+
+Fixed:
+
+- Invalid main in package.json (caused complete loss of functionality)
+- Built JavaScript file using `tsc` command (allows for usage in `.js` files)
+
 ## 1.0.4 - Dev Patch
 
 Added:

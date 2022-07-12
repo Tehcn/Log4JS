@@ -1,13 +1,14 @@
 {
   "name": "@tehcn/log4js",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Logger for JavaScript",
-  "main": "ts-node index.ts",
+  "main": "index.js",
   "directories": {
     "test": "tests"
   },
   "scripts": {
-    "test": "ts-node tests/test.ts"
+    "test": "ts-node tests/test.ts",
+    "build": "tsc"
   },
   "repository": {
     "type": "git",
