@@ -43,7 +43,11 @@ declare module "@tehcn/log4js" {
         BACKGROUND_DARK_BLUE = "\x1b[44m",
         BACKGROUND_DARK_MAGENTA = "\x1b[45m",
         BACKGROUND_DARK_AQUA = "\x1b[46m",
+<<<<<<< HEAD
         BACKGROUND_WHITE = "\x1b[47m",
+=======
+        BACKGROUND_WHITE = "\x1b[46m",
+>>>>>>> 56d0abb06586c5a646a8a732596514b004da3402
         OVERLINE = "\x1b[53m",
         FOREGROUND_DARK_GRAY = "\x1b[90m",
         FOREGROUND_DARK_GREY = "\x1b[90m",
