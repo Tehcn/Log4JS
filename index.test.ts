@@ -1,8 +1,8 @@
-import { Logger } from '../index';
+import { Style, Logger } from "./index";
 
-const logger = new Logger("main");
+const logger = new Logger("Test");
 let start = Date.now();
-let end = null;
+let end: number;
 
 // log levels
 logger.debug("Test all log levels");
@@ -20,10 +20,22 @@ console.log("\n");
 // default log levels
 logger.debug("Test all default log levels");
 
-const defaultLevelInfoTestLogger = new Logger("defaultLevelInfoTestLogger", "info");
-const defaultLevelDebugTestLogger = new Logger("defaultLevelDebugTestLogger", "debug");
-const defaultLevelWarnTestLogger = new Logger("defaultLevelWarnTestLogger", "warn");
-const defaultLevelErrorTestLogger = new Logger("defaultLevelErrorTestLogger", "error");
+const defaultLevelInfoTestLogger = new Logger(
+    "defaultLevelInfoTestLogger",
+    "info"
+);
+const defaultLevelDebugTestLogger = new Logger(
+    "defaultLevelDebugTestLogger",
+    "debug"
+);
+const defaultLevelWarnTestLogger = new Logger(
+    "defaultLevelWarnTestLogger",
+    "warn"
+);
+const defaultLevelErrorTestLogger = new Logger(
+    "defaultLevelErrorTestLogger",
+    "error"
+);
 defaultLevelInfoTestLogger.log("test default info");
 defaultLevelDebugTestLogger.log("test default debug");
 defaultLevelWarnTestLogger.log("test default warn");
@@ -308,7 +320,7 @@ console.log("\n");
 // performance test
 // also, i know performance.now is better but whatever
 logger.debug("Performance Test (1000 logs)");
-let performanceStart, performanceEnd;
+let performanceStart: number, performanceEnd: number;
 
 performanceStart = Date.now();
 logger.debug(`Start: ${performanceStart}`);
@@ -321,7 +333,9 @@ for (var i = 0; i <= 100; i++) {
 performanceEnd = Date.now();
 logger.debug(`End: ${performanceEnd}`);
 
-logger.debug(`Performance test took ${performanceEnd - performanceStart} miliseconds`);
+logger.debug(
+    `Performance test took ${performanceEnd - performanceStart} miliseconds`
+);
 
 console.log("\n");
 
@@ -339,6 +353,73 @@ thread();
 thread();
 thread();
 thread();
+
+console.log("\n");
+
+// printc test
+logger.debug("Logger.printc test (custom colors)");
+
+Logger.printc("printc", Style.RESET);
+Logger.printc("printc", Style.FOREGROUND_WHITE);
+Logger.printc("printc", Style.BOLD);
+Logger.printc("printc", Style.FOREGROUND_GRAY);
+Logger.printc("printc", Style.FOREGROUND_GREY);
+Logger.printc("printc", Style.ITALICS);
+Logger.printc("printc", Style.UNDERLINE);
+Logger.printc("printc", Style.BLINK);
+Logger.printc("printc", Style.HIGHLIGHT);
+Logger.printc("printc", Style.HIDE);
+Logger.printc("printc", Style.STRIKETHROUGH);
+Logger.printc("printc", Style.DOUBLE_UNDERLINE);
+Logger.printc("printc", Style.FOREGROUND_BACKGROUND);
+Logger.printc("printc", Style.FOREGROUND_LIGHT_RED);
+Logger.printc("printc", Style.FOREGROUND_LIGHT_GREEN);
+Logger.printc("printc", Style.FOREGROUND_LIGHT_YELLOW);
+Logger.printc("printc", Style.FOREGROUND_LIGHT_BLUE);
+Logger.printc("printc", Style.FOREGROUND_LIGHT_MAGENTA);
+Logger.printc("printc", Style.FOREGROUND_LIGHT_AQUA);
+Logger.printc("printc", Style.BACKGROUND_DARK_RED);
+Logger.printc("printc", Style.BACKGROUND_DARK_GREEN);
+Logger.printc("printc", Style.BACKGROUND_DARK_YELLOW);
+Logger.printc("printc", Style.BACKGROUND_DARK_BLUE);
+Logger.printc("printc", Style.BACKGROUND_DARK_MAGENTA);
+Logger.printc("printc", Style.BACKGROUND_DARK_AQUA);
+Logger.printc("printc", Style.BACKGROUND_WHITE);
+Logger.printc("printc", Style.OVERLINE);
+Logger.printc("printc", Style.FOREGROUND_DARK_GRAY);
+Logger.printc("printc", Style.FOREGROUND_DARK_GREY);
+Logger.printc("printc", Style.FOREGROUND_DARK_RED);
+Logger.printc("printc", Style.FOREGROUND_DARK_GREEN);
+Logger.printc("printc", Style.FOREGROUND_DARK_YELLOW);
+Logger.printc("printc", Style.FOREGROUND_DARK_BLUE);
+Logger.printc("printc", Style.FOREGROUND_DARK_MAGENTA);
+Logger.printc("printc", Style.FOREGROUND_DARK_AQUA);
+Logger.printc("printc", Style.BACKGROUND_LIGHT_GRAY);
+Logger.printc("printc", Style.BACKGROUND_LIGHT_GREY);
+Logger.printc("printc", Style.BACKGROUND_LIGHT_RED);
+Logger.printc("printc", Style.BACKGROUND_LIGHT_GREEN);
+Logger.printc("printc", Style.BACKGROUND_LIGHT_YELLOW);
+Logger.printc("printc", Style.BACKGROUND_LIGHT_BLUE);
+Logger.printc("printc", Style.BACKGROUND_LIGHT_MAGENTA);
+Logger.printc("printc", Style.BACKGROUND_LIGHT_AQUA);
+Logger.printc("printc", Style.BACKGROUND_LIGHT_WHITE);
+
+console.log("\n");
+
+// printc test
+logger.debug("Logger.printc test (multiple custom styles)");
+Logger.printc("multiple printc", Style.FOREGROUND_LIGHT_RED + Style.BOLD);
+Logger.printc(
+    "multiple printc",
+    Style.FOREGROUND_LIGHT_RED + Style.BACKGROUND_WHITE + Style.ITALICS
+);
+Logger.printc(
+    "multiple printc",
+    Style.FOREGROUND_LIGHT_RED +
+        Style.BACKGROUND_WHITE +
+        Style.ITALICS +
+        Style.BLINK
+);
 
 console.log("\n");
 

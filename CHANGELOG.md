@@ -3,6 +3,18 @@
 Most recent updates are at the top
 Note: Every update assumes updating of CHANGELOG.md and package.json
 
+## 1.1.0 - Minor Update
+
+Added:
+
+- Logger.printc to print with custom styling (bold, italics, colors, etc.)
+- Colors enum with all supported custom styles and reasonable names
+- Examples for Logger.printc in the README
+
+Fixed:
+
+- Styling in index.ts
+
 ## 1.0.5 - Bug Fix
 
 Fixed:
