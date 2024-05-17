@@ -1,6 +1,6 @@
 {
     "exclude": [
-        "./tests/test.ts",
+        "index.test.ts",
         "./typings/*.d.ts"
     ]
 }

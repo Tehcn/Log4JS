@@ -1,7 +1,17 @@
 "use strict";
 /// <reference path="./typings/index.d.ts"/>
-exports.__esModule = true;
-exports.Logger = void 0;
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Logger = exports.Color = void 0;
+var Color;
+(function (Color) {
+    Color["RESET"] = "\u001B[0m";
+    Color["WHITE"] = "\u001B[0m";
+    Color["GREEN"] = "\u001B[92m";
+    Color["BLUE"] = "\u001B[94m";
+    Color["YELLOW"] = "\u001B[93m";
+    Color["RED"] = "\u001B[94m";
+})(Color || (exports.Color = Color = {}));
+;
 var Logger = /** @class */ (function () {
     function Logger(name, defaultLevel, id) {
         if (defaultLevel === void 0) { defaultLevel = "info"; }
@@ -37,6 +47,11 @@ var Logger = /** @class */ (function () {
             msg = msg.toString();
         console.log("".concat(Logger.getLevelColor("error"), "[").concat(this.name, "/ERROR").concat(Logger.loggers[this.name] > 1 ? " #".concat(this.id) : '', "]\u001B[0m ").concat(msg));
     };
+    Logger.printc = function (msg, color) {
+        if (typeof msg == 'number')
+            msg = msg.toString();
+        console.log("".concat(color));
+    };
     Logger.getLevelColor = function (level) {
         if (level == "info")
             return "\x1b[92m";
@@ -56,4 +71,4 @@ var Logger = /** @class */ (function () {
     return Logger;
 }());
 exports.Logger = Logger;
-exports["default"] = Logger;
+exports.default = Logger;
